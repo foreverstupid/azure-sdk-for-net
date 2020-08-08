@@ -83,10 +83,11 @@ namespace Azure.DigitalTwins.Core.Serialization
         /// <summary>
         /// Serialize the constructed payload as json.
         /// </summary>
+        /// <param name="options">Options for JSON serializer.</param>
         /// <returns>A string of the json payload.</returns>
-        public string Serialize()
+        public string Serialize(JsonSerializerOptions options = null)
         {
-            return JsonSerializer.Serialize(_ops);
+            return JsonSerializer.Serialize(_ops, options);
         }
     }
 }
